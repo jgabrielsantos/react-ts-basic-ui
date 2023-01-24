@@ -4,8 +4,9 @@ import * as Styled from './style'
 type DefaultButtonProps = {
   children: ReactNode,
   onClick: React.MouseEventHandler<HTMLButtonElement>,
-  size: 'small' | 'medium' | 'large',
-  theme: 'primary' | 'secondary' | 'tertiary'
+  size?: 'small' | 'medium' | 'large',
+  theme?: 'primary' | 'secondary' | 'tertiary'
+  color?: string
   disabled?: boolean
   success?: boolean
   fail?: boolean
@@ -14,8 +15,9 @@ type DefaultButtonProps = {
 export const DefaultButton = ({
   children,
   onClick,
-  size = 'small',
-  theme = 'primary',
+  size,
+  theme,
+  color,
   disabled = false,
   success = false,
   fail = false
@@ -25,6 +27,7 @@ export const DefaultButton = ({
       onClick={onClick}
       size={size}
       theme={theme}
+      color={color}
       disabled={disabled}
       success={success}
       fail={fail}
